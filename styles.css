@@ -1,0 +1,21 @@
+.character-card {
+    border: 2px solid #ccc;
+    border-radius: 9px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(54, 53, 53, 0.1);
+}
+
+.character-card img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.character-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
