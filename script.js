@@ -5,11 +5,12 @@ const fetchCharacters = async () => {
     );
     const charactersData = await charactersResponse.json();
 
-    const characters = charactersData.results;
+    const characters = charactersData.results.slice(0, 10);
 
     characters.sort((a, b) => a.name.localeCompare(b.name));
 
     const charactersContainer = document.getElementById("characters-container");
+    charactersContainer.innerHTML = "";
 
     characters.forEach((character) => {
       const card = document.createElement("div");
@@ -45,6 +46,10 @@ const fetchCharacters = async () => {
           const characterData = await characterResponse.json();
 
           console.log("Character info:", characterData);
+          localStorage.setItem(
+            "selectedCharacter",
+            JSON.stringify(characterData)
+          );
         } catch (err) {
           console.log("Character info error:", err);
         }
